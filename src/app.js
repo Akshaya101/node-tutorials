@@ -4,6 +4,7 @@ const geocode = require('./utils/geocode.js')
 const express = require('express')
 const hbs = require('hbs')
 const app = express()
+const port = process.env.PORT || 3000
 
 //define paths for express configuration
 //console.log(__dirname)
@@ -93,6 +94,6 @@ app.get('*', (req, res) => {
 })
 
 //app.listen()
-app.listen(3000, function () {
-    console.log('Port 3000 is up for it')
+app.listen(port, function () {
+    console.log(`Port ${port} is up for it`)
 })
