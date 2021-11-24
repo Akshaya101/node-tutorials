@@ -5,8 +5,10 @@ const weatherForm = document.querySelector('form')
 const search = document.querySelector('input')
 let message1 = document.querySelector('#message-1')
 let message2 = document.querySelector('#message-2')
+let weatherIcon = document.querySelector('#weather-icon')
 
 message1.textContent = ''
+let iconURL = ''
 
 weatherForm.addEventListener('submit', (e) => {
     e.preventDefault()
@@ -22,6 +24,8 @@ weatherForm.addEventListener('submit', (e) => {
                 else {
                     message1.textContent = data.location
                     message2.textContent = data.forecast
+                    iconURL = data.icon + '.png'
+                    weatherIcon.src = "https://openweathermap.org/img/w/" + iconURL
                 }
             })
         })

@@ -13,6 +13,7 @@ const forecast = (lat, lon, callback) => {
 
             callback(undefined, {
                 forecast: response.body.weather[0].description,
+                icon: response.body.weather[0].icon
             })
         }
     })
